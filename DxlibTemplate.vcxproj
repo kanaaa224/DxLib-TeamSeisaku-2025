@@ -140,7 +140,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AppMain.cpp" />
+    <ClCompile Include="fpsCtrl.cpp" />
     <ClCompile Include="GameMainScene.cpp" />
+    <ClCompile Include="inputCtrl.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Scene\EndScene.cpp" />
   </ItemGroup>
@@ -148,7 +150,9 @@
     <ClInclude Include="AbstractScene.h" />
     <ClInclude Include="Common.h" />
     <ClInclude Include="FPS.h" />
+    <ClInclude Include="fpsCtrl.h" />
     <ClInclude Include="GameMainScene.h" />
+    <ClInclude Include="inputCtrl.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Scene\EndScene.h" />
   </ItemGroup>
