@@ -6,6 +6,7 @@
 #include "inputCtrl.h"
 
 #include "GameMainScene.h"
+#include "Scene/TitleScene.h"
 
 #define _SCREEN_COLOR_BIT_16_ 16
 #define _SCREEN_COLOR_BIT_32_ 32
@@ -34,7 +35,8 @@ int WINAPI WinMain(_In_ HINSTANCE ih, _In_opt_ HINSTANCE ioh, _In_ LPSTR il, _In
 
 	SetDrawScreen(DX_SCREEN_BACK);	// 描画先画面を裏にする
 
-	SceneManager sceneMng(dynamic_cast<AbstractScene*>(new GameMainScene()));
+	//最初に描画される画面
+	SceneManager sceneMng(dynamic_cast<AbstractScene*>(new TitleScene()));
 	
 	FPS::SetLimitRate(60); // TODO: マクロ定義
 	FPS::SetUpdateInterval(1000);
