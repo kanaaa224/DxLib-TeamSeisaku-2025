@@ -145,6 +145,7 @@
     <ClCompile Include="inputCtrl.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Scene\EndScene.cpp" />
+    <ClCompile Include="Scene\TitleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractScene.h" />
@@ -155,6 +156,7 @@
     <ClInclude Include="inputCtrl.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Scene\EndScene.h" />
+    <ClInclude Include="Scene\TitleScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
