@@ -154,6 +154,7 @@
     <ClInclude Include="fpsCtrl.h" />
     <ClInclude Include="GameMainScene.h" />
     <ClInclude Include="inputCtrl.h" />
+    <ClInclude Include="Scene\SceneBase.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Scene\EndScene.h" />
     <ClInclude Include="Scene\TitleScene.h" />
