@@ -1,4 +1,5 @@
 #include "EndScene.h"
+#include"../SceneManager.h"
 
 EndScene::EndScene()
 {
@@ -17,7 +18,6 @@ void EndScene::Initialize()
 
 eSceneType EndScene::Update()
 {
-
 }
 
 
