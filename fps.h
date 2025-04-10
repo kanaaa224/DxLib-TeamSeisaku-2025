@@ -8,7 +8,7 @@
 #include "DxLib.h"
 
 // FPS コントローラー クラス（FPSの制限・取得に対応）
-class FPSCtrl {
+class FPS {
 private:
     static int frameTime, waitTime, lastTime, nowTime, updateTime, lastUpdate;
 

@@ -31,7 +31,7 @@ struct MousePoint {
 	int y = 0; // 縦軸値
 };
 
-// 入力コントローラー クラス（ゲームコントローラー / キーボード・マウス に対応）
+// 入力 コントローラー クラス（ゲームコントローラー / キーボード・マウス に対応）
 class InputCtrl {
 private:
 	static char nowBtn[PAD_BUTTONS];  // 今回のボタン入力
