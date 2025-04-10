@@ -21,54 +21,54 @@
 
 // スティック入力 構造体
 struct PadStick {
-	float x = 0; // 横軸値
-	float y = 0; // 縦軸値
+    float x = 0; // 横軸値
+    float y = 0; // 縦軸値
 };
 
 // マウスカーソル 構造体
 struct MousePoint {
-	int x = 0; // 横軸値
-	int y = 0; // 縦軸値
+    int x = 0; // 横軸値
+    int y = 0; // 縦軸値
 };
 
 // 入力 コントローラー クラス（ゲームコントローラー / キーボード・マウス に対応）
 class InputCtrl {
 private:
-	static char nowBtn[PAD_BUTTONS];  // 今回のボタン入力
-	static char oldBtn[PAD_BUTTONS];  // 前回のボタン入力
+    static char nowBtn[PAD_BUTTONS];  // 今回のボタン入力
+    static char oldBtn[PAD_BUTTONS];  // 前回のボタン入力
 
-	static XINPUT_STATE padInput;     // ゲームコントローラー入力状態
+    static XINPUT_STATE padInput;     // ゲームコントローラー入力状態
 
-	static PadStick padLStick;        // 左スティック
-	static PadStick padRStick;        // 右スティック
+    static PadStick padLStick;        // 左スティック
+    static PadStick padRStick;        // 右スティック
 
-	static int nowKey[KEYBOARD_KEYS]; // 今回のキーボードキー入力
+    static int nowKey[KEYBOARD_KEYS]; // 今回のキーボードキー入力
 
-	static MousePoint mousePoint;     // マウスカーソルの位置
-	static int nowMouseClick[2];      // 今回のマウスクリック入力
-	static int oldMouseClick[2];      // 前回のマウスクリック入力
+    static MousePoint mousePoint;     // マウスカーソルの位置
+    static int nowMouseClick[2];      // 今回のマウスクリック入力
+    static int oldMouseClick[2];      // 前回のマウスクリック入力
 
-	InputCtrl() = default;
+    InputCtrl() = default;
 
 public:
-	// 入力状況の更新
-	static void Update();
+    // 入力状況の更新
+    static void Update();
 
-	// コントローラーのボタンの状態を取得
-	static int GetButtonState(int);
+    // コントローラーのボタンの状態を取得
+    static int GetButtonState(int);
 
-	// コントローラーのスティックの状態を取得（構造体）
-	static PadStick GetStickState(int);
+    // コントローラーのスティックの状態を取得（構造体）
+    static PadStick GetStickState(int);
 
-	// コントローラーのスティックの傾き割合を取得（構造体）
-	static PadStick GetStickRatio(int);
+    // コントローラーのスティックの傾き割合を取得（構造体）
+    static PadStick GetStickRatio(int);
 
-	// キーボードのキーの状態を取得
-	static int GetKeyState(int);
+    // キーボードのキーの状態を取得
+    static int GetKeyState(int);
 
-	// マウスのボタンの状態を取得
-	static int GetMouseState(int);
+    // マウスのボタンの状態を取得
+    static int GetMouseState(int);
 
-	// マウスのカーソル位置を取得（構造体）
-	static MousePoint GetMouseCursor();
+    // マウスのカーソル位置を取得（構造体）
+    static MousePoint GetMouseCursor();
 };
