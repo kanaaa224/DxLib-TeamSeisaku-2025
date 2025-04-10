@@ -2,7 +2,7 @@
 
 EndScene::EndScene()
 {
-
+	
 }
 
 EndScene::~EndScene()
@@ -12,17 +12,18 @@ EndScene::~EndScene()
 
 void EndScene::Initialize()
 {
-
+	eSceneType::E_END;
 }
 
-void EndScene::Update()
+eSceneType EndScene::Update()
 {
 
 }
+
 
 void EndScene::Draw()
 {
-	
+	printf("‚±‚±‚Íƒ^ƒCƒgƒ‹‰æ–Ê‚Å‚·\n");
 }
 
 void EndScene::Finalize()

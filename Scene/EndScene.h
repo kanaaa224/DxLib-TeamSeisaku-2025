@@ -1,5 +1,7 @@
 #pragma once
-class EndScene
+#include"SceneBase.h"
+
+class EndScene :public SceneBase
 {
 
 public:
@@ -7,7 +9,7 @@ public:
 	~EndScene();
 
     void Initialize();
-	void Update();
+	virtual eSceneType Update() override;
 	void Draw();
 	void Finalize();
 };
