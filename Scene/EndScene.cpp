@@ -12,7 +12,7 @@ EndScene::~EndScene()
 
 void EndScene::Initialize()
 {
-	eSceneType::E_END;
+
 }
 
 eSceneType EndScene::Update()
@@ -29,4 +29,9 @@ void EndScene::Draw()
 void EndScene::Finalize()
 {
 
+}
+
+eSceneType EndScene::GetNowScene() const
+{
+	return eSceneType::E_END;
 }

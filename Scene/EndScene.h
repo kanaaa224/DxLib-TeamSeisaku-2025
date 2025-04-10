@@ -12,5 +12,7 @@ public:
 	virtual eSceneType Update() override;
 	void Draw();
 	void Finalize();
+
+	virtual eSceneType GetNowScene() const override;
 };
 
