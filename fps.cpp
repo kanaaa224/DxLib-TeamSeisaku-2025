@@ -3,27 +3,27 @@
 // 作成: Kanato Shimabukuro
 //////////////////////////////////////////////////
 
-#include "fpsCtrl.h"
+#include "fps.h"
 
-int FPSCtrl::frameTime  = 0;
-int FPSCtrl::waitTime   = 0;
-int FPSCtrl::lastTime   = 0;
-int FPSCtrl::nowTime    = 0;
-int FPSCtrl::updateTime = 0;
-int FPSCtrl::lastUpdate = 0;
+int FPS::frameTime  = 0;
+int FPS::waitTime   = 0;
+int FPS::lastTime   = 0;
+int FPS::nowTime    = 0;
+int FPS::updateTime = 0;
+int FPS::lastUpdate = 0;
 
-float FPSCtrl::count = 0.0f;
-float FPSCtrl::fps   = 0.0f;
+float FPS::count = 0.0f;
+float FPS::fps   = 0.0f;
 
-void FPSCtrl::SetLimitRate(float refreshRate) {
+void FPS::SetLimitRate(float refreshRate) {
     frameTime = (int)(1000.0f / refreshRate);
 }
 
-void FPSCtrl::SetUpdateInterval(int updateInterval) {
+void FPS::SetUpdateInterval(int updateInterval) {
     updateTime = updateInterval;
 }
 
-void FPSCtrl::Limit() {
+void FPS::Limit() {
     nowTime = GetNowCount();
 
     waitTime = frameTime - (nowTime - lastTime);
@@ -33,7 +33,7 @@ void FPSCtrl::Limit() {
     lastTime = GetNowCount();
 }
 
-void FPSCtrl::Update() {
+void FPS::Update() {
     int time = GetNowCount();
 
     count += 1.0f;
@@ -47,6 +47,6 @@ void FPSCtrl::Update() {
     }
 }
 
-float FPSCtrl::Get() {
+float FPS::Get() {
     return fps;
 }

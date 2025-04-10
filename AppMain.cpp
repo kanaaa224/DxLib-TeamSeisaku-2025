@@ -1,14 +1,16 @@
 ﻿#include "DxLib.h"
 #include "Common.h"
 #include "SceneManager.h"
-#include "FPS.h"
+
+#include "fps.h"
+#include "inputCtrl.h"
 
 #include "GameMainScene.h"
 
 #define _SCREEN_COLOR_BIT_16_ 16
 #define _SCREEN_COLOR_BIT_32_ 32
 
-//#define DEBUG
+#define DEBUG
 
 int WINAPI WinMain(_In_ HINSTANCE ih, _In_opt_ HINSTANCE ioh, _In_ LPSTR il, _In_ int ii)
 {
@@ -33,18 +35,28 @@ int WINAPI WinMain(_In_ HINSTANCE ih, _In_opt_ HINSTANCE ioh, _In_ LPSTR il, _In
 	SetDrawScreen(DX_SCREEN_BACK);	// 描画先画面を裏にする
 
 	SceneManager sceneMng(dynamic_cast<AbstractScene*>(new GameMainScene()));
-	FPS fps;
+	
+	FPS::SetLimitRate(60); // TODO: マクロ定義
+	FPS::SetUpdateInterval(1000);
 
 	//ゲームループ
 	while (ProcessMessage() != -1 && sceneMng.Update() != nullptr)
 	{
 		ClearDrawScreen();
-		fps.Update();	//FPS計測
+
+		if ((GetMainWindowHandle() == GetForegroundWindow())) InputCtrl::Update();
+
+		FPS::Limit();
+		FPS::Update();
+
 		sceneMng.Draw();//シーン描画
-		fps.Wait();		//FPS同期
+
 #ifdef DEBUG
-		fps.Draw();		//FPS描画
-#endif // DEBUG
+		SetFontSize(16);
+		DrawFormatString(10, 10, 0xffffff, "FPS: %0.0f", FPS::Get());
+
+		if (InputCtrl::GetButtonState(XINPUT_BUTTON_BACK)) break; // 強制終了
+#endif DEBUG
 		ScreenFlip();
 	}
 
